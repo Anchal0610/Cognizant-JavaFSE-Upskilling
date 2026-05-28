@@ -8,36 +8,36 @@ A lightweight, browser-based portal for residents to register for events, check 
 Cognizant-JavaFSE-Upskilling/
 ├── index.html                  # Main portal page (all HTML5 exercises)
 ├── help.html                   # External help document
+├── css/
+│   ├── styles.css              # Master stylesheet (@imports all ex files)
+│   ├── ex01-css-methods.css
+│   ├── ex02-syntax-comments.css
+│   ├── ex03-selectors.css
+│   ├── ex04-colors-background.css
+│   ├── ex05-typography.css
+│   ├── ex06-links-lists.css
+│   ├── ex07-tables.css
+│   ├── ex08-box-model.css
+│   ├── ex09-columns.css
+│   ├── ex10-responsive.css
+│   └── ex11-debug.css
+├── js/
+│   ├── main.js                 # Bootstrap + HTML event handlers
+│   ├── ex01-basics-setup.js
+│   ├── ex02-data-types.js
+│   ├── ex03-conditionals.js
+│   ├── ex04-functions.js
+│   ├── ex05-objects.js
+│   ├── ex06-arrays.js
+│   ├── ex07-dom.js
+│   ├── ex08-event-handling.js
+│   ├── ex09-async.js
+│   ├── ex10-es6.js
+│   ├── ex11-forms.js
+│   ├── ex12-ajax.js
+│   ├── ex13-debugging.js
+│   └── ex14-jquery.js
 ├── assets/
-│   ├── css/
-│   │   ├── styles.css          # Master stylesheet (@imports all ex files)
-│   │   ├── ex01-css-methods.css
-│   │   ├── ex02-syntax-comments.css
-│   │   ├── ex03-selectors.css
-│   │   ├── ex04-colors-background.css
-│   │   ├── ex05-typography.css
-│   │   ├── ex06-links-lists.css
-│   │   ├── ex07-tables.css
-│   │   ├── ex08-box-model.css
-│   │   ├── ex09-columns.css
-│   │   ├── ex10-responsive.css
-│   │   └── ex11-debug.css
-│   ├── js/
-│   │   ├── main.js             # Bootstrap + HTML event handlers
-│   │   ├── ex01-basics-setup.js
-│   │   ├── ex02-data-types.js
-│   │   ├── ex03-conditionals.js
-│   │   ├── ex04-functions.js
-│   │   ├── ex05-objects.js
-│   │   ├── ex06-arrays.js
-│   │   ├── ex07-dom.js
-│   │   ├── ex08-event-handling.js
-│   │   ├── ex09-async.js
-│   │   ├── ex10-es6.js
-│   │   ├── ex11-forms.js
-│   │   ├── ex12-ajax.js
-│   │   ├── ex13-debugging.js
-│   │   └── ex14-jquery.js
 │   ├── images/
 │   │   ├── event1-6.svg        # Placeholder event gallery images
 │   │   ├── background.svg      # Background texture

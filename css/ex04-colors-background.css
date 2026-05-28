@@ -5,7 +5,7 @@
 
 /* Body: background image with fallback color */
 body {
-    background: #f4f4f4 url('../images/background.svg') repeat;
+    background: #f4f4f4 url('../assets/images/background.svg') repeat;
     color: #333;
 }
 
