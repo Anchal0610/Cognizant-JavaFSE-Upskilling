@@ -1,0 +1,73 @@
+/* ========================================
+   CSS3 Exercise 10: Responsive Web Design
+   Flexbox layout, media queries,
+   %, vw, vh for flexible layouts
+   ======================================== */
+
+/* Flexbox responsive layout */
+.event-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+}
+
+.event-card {
+    flex: 1 1 280px;
+    max-width: 350px;
+}
+
+/* Mobile screens */
+@media screen and (max-width: 768px) {
+    body {
+        padding: 10px;
+        font-size: 14px;
+    }
+
+    /* Stack navigation vertically */
+    nav ul li {
+        display: block;
+        margin: 10px 0;
+    }
+
+    /* Reduce image sizes */
+    .event-img {
+        width: 100%;
+        height: auto;
+        max-width: 200px;
+    }
+
+    /* Reduce font sizes */
+    h2 {
+        font-size: 22px;
+    }
+
+    form {
+        padding: 15px;
+    }
+
+    table {
+        font-size: 14px;
+    }
+
+    .bulletin {
+        column-count: 1;
+    }
+
+    #welcomeBanner {
+        padding: 20px;
+    }
+
+    #mainHeader {
+        font-size: 24px;
+    }
+
+    .event-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    input, select, textarea, button {
+        font-size: 14px;
+    }
+}

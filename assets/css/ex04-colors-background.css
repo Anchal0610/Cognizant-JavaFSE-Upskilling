@@ -1,0 +1,27 @@
+/* ========================================
+   CSS3 Exercise 4: Color & Background Styling
+   HEX, RGBA, background image, gradients
+   ======================================== */
+
+/* Body: background image with fallback color */
+body {
+    background: #f4f4f4 url('../images/background.svg') repeat;
+    color: #333;
+}
+
+/* Heading: linear gradient */
+h2 {
+    background: linear-gradient(90deg, #3498db, #2ecc71);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+/* RGBA usage in box-shadows and overlays */
+.event-card {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+#welcomeBanner {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}

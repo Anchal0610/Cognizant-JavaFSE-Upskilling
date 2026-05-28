@@ -1,0 +1,38 @@
+/* ========================================
+   CSS3 Exercise 5: Typography
+   Google Fonts, font-family, font-size,
+   font-style, font-weight, text properties
+   ======================================== */
+
+body {
+    font-family: 'Roboto', Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.6;
+    padding: 20px;
+}
+
+h2 {
+    font-size: 28px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    text-align: center;
+}
+
+#mainHeader {
+    font-size: 36px;
+    font-weight: 700;
+}
+
+.highlight {
+    font-size: 18px;
+}
+
+nav ul li a:link {
+    font-weight: bold;
+    font-size: 18px;
+}
+
+table figcaption {
+    font-size: 14px;
+}

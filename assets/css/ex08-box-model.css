@@ -1,0 +1,109 @@
+/* ========================================
+   CSS3 Exercise 8: Box Model & Layout Control
+   margin, padding, border, outline,
+   visibility:hidden vs display:none
+   ======================================== */
+
+/* Form: margin, padding, border */
+form {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 0 auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+    font-weight: bold;
+}
+
+input, select, textarea, button {
+    width: 100%;
+    padding: 12px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+    font-family: inherit;
+}
+
+/* Outline to highlight selected form fields */
+input:focus, select:focus, textarea:focus {
+    outline: 3px solid #3498db;
+    border-color: #3498db;
+}
+
+button {
+    background: #3498db;
+    color: white;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 14px;
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+}
+
+output {
+    display: block;
+    margin: 10px 0;
+    padding: 10px;
+    background: #d4edda;
+    border-radius: 5px;
+    color: #155724;
+    font-weight: bold;
+    text-align: center;
+}
+
+/* Event card box model */
+.event-card {
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 15px 0;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Image borders */
+.event-img {
+    border: 3px solid #3498db;
+    border-radius: 5px;
+}
+
+/* Video border */
+#video video {
+    border: 2px solid #3498db;
+    border-radius: 8px;
+}
+
+/* Preferences & Location section box model */
+#preferences, #location {
+    background: white;
+    padding: 25px;
+    border-radius: 8px;
+    max-width: 500px;
+    margin: 20px auto;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#preferences button, #location button {
+    width: auto;
+    padding: 10px 20px;
+    display: inline-block;
+}
+
+/* Comparison: visibility:hidden vs display:none */
+.hidden-visibility {
+    visibility: hidden;
+}
+
+.hidden-display {
+    display: none;
+}

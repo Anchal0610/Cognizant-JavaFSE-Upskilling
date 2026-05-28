@@ -1,0 +1,47 @@
+/* ========================================
+   CSS3 Exercise 6: Link and List Styling
+   :link :visited :hover :active pseudo-classes
+   list-style-type, list-style-position, no bullets
+   ======================================== */
+
+/* Navigation background */
+nav {
+    background: #2c3e50;
+    padding: 15px 0;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+
+/* Remove bullets from nav menus */
+nav ul {
+    list-style-type: none;
+    list-style-position: inside;
+    text-align: center;
+}
+
+nav ul li {
+    display: inline-block;
+    margin: 0 15px;
+    padding: 5px 10px;
+}
+
+/* Link pseudo-classes */
+nav ul li a:link {
+    color: #ecf0f1;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 18px;
+}
+
+nav ul li a:visited {
+    color: #bdc3c7;
+}
+
+nav ul li a:hover {
+    color: #f1c40f;
+    text-decoration: underline;
+}
+
+nav ul li a:active {
+    color: #e74c3c;
+}
