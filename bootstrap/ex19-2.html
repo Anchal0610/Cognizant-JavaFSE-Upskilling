@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customizing Bootstrap with Sass</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    .custom-primary {
+      background-color: #ff5733;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 0.5rem;
+      display: inline-block;
+    }
+    .custom-border {
+      border-radius: 0.5rem;
+      border: 2px solid #ff5733;
+      padding: 0.5rem 1rem;
+      display: inline-block;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container pt-4">
+    <h1>Customizing Bootstrap with Sass</h1>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Override Variables Before Importing</h5>
+        <p>Create a <code>custom.scss</code> file and override Bootstrap's default variables <strong>before</strong> importing the framework:</p>
+        <pre class="bg-light p-3 rounded"><code>// Custom variable overrides
+$primary: #ff5733;
+$border-radius: 0.5rem;
+
+// Import Bootstrap
+@import "bootstrap/scss/bootstrap";</code></pre>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Compiled Result (Mockup)</h5>
+        <p>After compiling, these custom values are applied throughout all Bootstrap components:</p>
+        <div class="d-flex gap-3 flex-wrap">
+          <div class="custom-primary">Primary Button (custom #ff5733)</div>
+          <div class="custom-border">Bordered Element (custom 0.5rem radius)</div>
+          <div class="bg-primary text-white px-3 py-2" style="border-radius: 0.5rem;">
+            Native Bootstrap btn with overridden $primary
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Directory Structure</h5>
+        <pre class="bg-light p-3 rounded"><code>project/
+├── node_modules/
+│   └── bootstrap/
+├── scss/
+│   ├── custom.scss       &lt;-- Your custom SCSS file
+│   └── _variables.scss   &lt;-- Optional partials
+├── css/
+│   └── custom.css        &lt;-- Compiled output
+├── index.html
+└── package.json</code></pre>
+      </div>
+    </div>
+
+    <div class="card mb-4">
+      <div class="card-body">
+        <h5 class="card-title">Recompilation</h5>
+        <p>Any time you change your SCSS variables or files, you need to recompile to regenerate the CSS:</p>
+        <pre class="bg-light p-3 rounded"><code>sass scss/custom.scss css/custom.css
+
+# Or watch for changes automatically:
+sass --watch scss/custom.scss:css/custom.css</code></pre>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

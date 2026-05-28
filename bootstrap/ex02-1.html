@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bootstrap Directory Structure</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+</head>
+<body>
+
+  <!-- Exercise 2.1 -->
+  <div class="container my-5">
+    <h1 class="mb-4">Bootstrap Directory Structure</h1>
+    <table class="table table-bordered">
+      <thead class="table-dark">
+        <tr>
+          <th>Directory</th>
+          <th>Purpose</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td><code>css/</code></td>
+          <td>Contains compiled CSS files including bootstrap.css, bootstrap.min.css, and optional theme variants (e.g., bootstrap-grid.css, bootstrap-reboot.css).</td>
+        </tr>
+        <tr>
+          <td><code>js/</code></td>
+          <td>Contains compiled JavaScript files including bootstrap.js, bootstrap.min.js, and bundle versions that include Popper.js for tooltips and popovers.</td>
+        </tr>
+        <tr>
+          <td><code>fonts/</code></td>
+          <td>Previously held Glyphicon icon fonts. As of Bootstrap 5, icon fonts are removed — use the separate Bootstrap Icons package instead.</td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="alert alert-info mt-3">
+      <strong>Note:</strong> Icons (formerly in <code>fonts/</code>) are now a separate package at <a href="https://icons.getbootstrap.com" target="_blank">icons.getbootstrap.com</a>.
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
