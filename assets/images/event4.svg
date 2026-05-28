@@ -1,0 +1,8 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#e67e22"/>
+  <circle cx="200" cy="130" r="30" fill="#fff" opacity="0.4"/>
+  <circle cx="280" cy="130" r="30" fill="#fff" opacity="0.4"/>
+  <rect x="210" y="160" width="60" height="60" rx="5" fill="#f1c40f"/>
+  <text x="240" y="260" font-family="Arial" font-size="22" fill="white" text-anchor="middle" font-weight="bold">Food Fair</text>
+  <text x="240" y="285" font-family="Arial" font-size="14" fill="#fdebd0" text-anchor="middle">Taste the World</text>
+</svg>

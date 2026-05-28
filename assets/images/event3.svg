@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#27ae60"/>
+  <path d="M240 80 L300 200 L180 200 Z" fill="#f1c40f" opacity="0.8"/>
+  <text x="240" y="250" font-family="Arial" font-size="22" fill="white" text-anchor="middle" font-weight="bold">Charity Run</text>
+  <text x="240" y="275" font-family="Arial" font-size="14" fill="#a9dfbf" text-anchor="middle">Run for a Cause</text>
+</svg>

@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#3498db"/>
+  <circle cx="240" cy="120" r="50" fill="#f1c40f"/>
+  <text x="240" y="230" font-family="Arial" font-size="22" fill="white" text-anchor="middle" font-weight="bold">Community Festival</text>
+  <text x="240" y="260" font-family="Arial" font-size="14" fill="#ecf0f1" text-anchor="middle">2024</text>
+</svg>

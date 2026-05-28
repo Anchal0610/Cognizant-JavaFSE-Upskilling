@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="320" viewBox="0 0 480 320">
+  <rect width="480" height="320" fill="#e74c3c"/>
+  <rect x="160" y="100" width="160" height="120" rx="10" fill="white" opacity="0.3"/>
+  <circle cx="240" cy="120" r="20" fill="#e74c3c"/>
+  <text x="240" y="250" font-family="Arial" font-size="22" fill="white" text-anchor="middle" font-weight="bold">Art Workshop</text>
+  <text x="240" y="275" font-family="Arial" font-size="14" fill="#f5b7b1" text-anchor="middle">Creative Session</text>
+</svg>

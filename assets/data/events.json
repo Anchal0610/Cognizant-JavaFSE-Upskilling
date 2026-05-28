@@ -1,0 +1,50 @@
+[
+    {
+        "id": 1,
+        "name": "Music Concert",
+        "date": "2026-06-15",
+        "category": "Music",
+        "seats": 50,
+        "description": "Enjoy live performances from local bands."
+    },
+    {
+        "id": 2,
+        "name": "Art Workshop",
+        "date": "2026-07-01",
+        "category": "Workshop",
+        "seats": 20,
+        "description": "Learn painting and sketching techniques."
+    },
+    {
+        "id": 3,
+        "name": "Food Festival",
+        "date": "2026-08-10",
+        "category": "Festival",
+        "seats": 100,
+        "description": "Taste dishes from around the world."
+    },
+    {
+        "id": 4,
+        "name": "Charity Run",
+        "date": "2026-09-05",
+        "category": "Sports",
+        "seats": 0,
+        "description": "Run for a cause in our annual charity marathon."
+    },
+    {
+        "id": 5,
+        "name": "Yoga Session",
+        "date": "2026-05-20",
+        "category": "Workshop",
+        "seats": 15,
+        "description": "Relax and rejuvenate with outdoor yoga."
+    },
+    {
+        "id": 6,
+        "name": "Community Festival",
+        "date": "2026-04-10",
+        "category": "Festival",
+        "seats": 200,
+        "description": "Annual community gathering with activities for all ages."
+    }
+]

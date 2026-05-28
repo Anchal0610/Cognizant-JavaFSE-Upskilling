@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Local Community Event Portal</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <!-- Navigation -->
+    <nav>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#registration">Register</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="help.html" target="_blank">Help</a></li>
+        </ul>
+    </nav>
+
+    <!-- Main -->
+    <main>
+
+        <!-- Home / Welcome Banner -->
+        <section id="home">
+            <div id="welcomeBanner">
+                <h1 id="mainHeader">Welcome to the Local Community Event Portal</h1>
+                <p>Your gateway to local events, services, and community connections.</p>
+                <span style="color: red; font-weight: bold;">Special Offer: Register today and get a free community pass!</span>
+            </div>
+            <p class="highlight">Explore events, register online, and stay connected with your community.</p>
+        </section>
+
+        <!-- Events Section -->
+        <section id="events">
+            <h2>Upcoming Events</h2>
+
+            <div id="eventList" class="event-container"></div>
+
+            <h3>Past Event Gallery</h3>
+            <table>
+                <tr>
+                    <td><img src="assets/images/event1.svg" alt="Community Festival 2024" title="Community Festival 2024" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Community Festival 2024</figcaption></td>
+                    <td><img src="assets/images/event2.svg" alt="Art Workshop" title="Art Workshop" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Art Workshop</figcaption></td>
+                    <td><img src="assets/images/event3.svg" alt="Charity Run" title="Charity Run" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Charity Run</figcaption></td>
+                </tr>
+                <tr>
+                    <td><img src="assets/images/event4.svg" alt="Food Fair" title="Food Fair" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Food Fair</figcaption></td>
+                    <td><img src="assets/images/event5.svg" alt="Music Concert" title="Music Concert" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Music Concert</figcaption></td>
+                    <td><img src="assets/images/event6.svg" alt="Yoga Session" title="Yoga Session" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Yoga Session</figcaption></td>
+                </tr>
+            </table>
+
+            <!-- Category Filter -->
+            <div>
+                <label for="categoryFilter">Filter by Category:</label>
+                <select id="categoryFilter" onchange="filterEventsByCategory(this.value)">
+                    <option value="all">All</option>
+                    <option value="Music">Music</option>
+                    <option value="Workshop">Workshop</option>
+                    <option value="Festival">Festival</option>
+                    <option value="Sports">Sports</option>
+                </select>
+            </div>
+
+            <!-- Quick Search -->
+            <div>
+                <label for="searchInput">Quick Search:</label>
+                <input type="text" id="searchInput" placeholder="Type event name..." onkeydown="quickSearch(event)">
+            </div>
+        </section>
+
+        <!-- Registration Form -->
+        <section id="registration">
+            <h2>Event Registration</h2>
+            <form id="registrationForm" onsubmit="handleRegistration(event)">
+                <label for="name">Full Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required autofocus>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" placeholder="you@example.com" required>
+
+                <label for="eventDate">Event Date:</label>
+                <input type="date" id="eventDate" name="eventDate" required>
+
+                <label for="eventType">Event Type:</label>
+                <select id="eventType" name="eventType" onchange="displayEventFee(this)">
+                    <option value="">--Select--</option>
+                    <option value="Music">Music Concert - $25</option>
+                    <option value="Workshop">Workshop - $15</option>
+                    <option value="Festival">Festival - Free</option>
+                    <option value="Sports">Sports Event - $10</option>
+                </select>
+                <p id="feeDisplay">Selected fee: --</p>
+
+                <label for="message">Message / Special Requests:</label>
+                <textarea id="message" name="message" placeholder="Any special requests..." rows="4"></textarea>
+
+                <output name="confirmation" id="confirmation"></output>
+
+                <button type="submit" id="registerBtn" onclick="showConfirmation(event)">Register</button>
+            </form>
+        </section>
+
+        <!-- Event Feedback -->
+        <section id="feedback">
+            <h2>Event Feedback</h2>
+            <form id="feedbackForm">
+                <label for="phone">Phone Number:</label>
+                <input type="text" id="phone" name="phone" placeholder="123-456-7890" onblur="validatePhone(this)">
+
+                <label for="feedbackMessage">Your Feedback:</label>
+                <textarea id="feedbackMessage" rows="4" placeholder="Share your experience..." onkeydown="countCharacters(this)"></textarea>
+                <p>Character count: <span id="charCount">0</span></p>
+
+                <button type="button" id="submitFeedback" onclick="submitFeedback()">Submit Feedback</button>
+            </form>
+        </section>
+
+        <!-- Video Invite -->
+        <section id="video">
+            <h2>Event Promo Video</h2>
+            <video id="promoVideo" width="480" controls oncanplay="videoReady()">
+                <source src="assets/images/promo.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <p id="videoStatus"></p>
+        </section>
+
+        <!-- User Preferences -->
+        <section id="preferences">
+            <h2>User Preferences</h2>
+            <label for="prefEventType">Preferred Event Type:</label>
+            <select id="prefEventType" onchange="savePreference(this.value)">
+                <option value="">--Select--</option>
+                <option value="Music">Music</option>
+                <option value="Workshop">Workshop</option>
+                <option value="Festival">Festival</option>
+                <option value="Sports">Sports</option>
+            </select>
+            <button onclick="clearPreferences()">Clear Preferences</button>
+        </section>
+
+        <!-- Geolocation -->
+        <section id="location">
+            <h2>Find Nearby Events</h2>
+            <button onclick="findNearbyEvents()">Find Nearby Events</button>
+            <p id="coordinates"></p>
+            <p id="geoError"></p>
+        </section>
+
+        <!-- Contact -->
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p class="highlight">Email: community@cityportal.com | Phone: (555) 123-4567</p>
+            <h3>Community Bulletin</h3>
+            <div class="bulletin">
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            </div>
+            <h3>Event Details</h3>
+            <table class="events-table">
+                <tr><th>Event</th><th>Date</th><th>Seats</th></tr>
+                <tr><td>Music Concert</td><td>2026-06-15</td><td>50</td></tr>
+                <tr><td>Art Workshop</td><td>2026-07-01</td><td>20</td></tr>
+                <tr><td>Food Festival</td><td>2026-08-10</td><td>100</td></tr>
+            </table>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Local Community Event Portal. All rights reserved.</p>
+    </footer>
+
+    <script src="assets/js/main.js"></script>
+</body>
+</html>
