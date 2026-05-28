@@ -3,75 +3,171 @@
    Universal | Element | ID | Class | Grouping
    ======================================== */
 
-/* Universal Selector - Reset margin/padding */
+/* Universal Selector - Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-/* Element Selector - style all h2 */
+/* Element Selector - h2 */
 h2 {
-    color: #2c3e50;
-    font-size: 28px;
-    font-weight: 700;
-    margin: 25px 0 15px;
+    color: var(--dark);
+    font-size: 32px;
+    font-weight: 800;
+    margin: 50px 0 20px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-align: center;
+    position: relative;
 }
 
-/* Grouping Selector - style h3 and p together */
+h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    border-radius: 2px;
+    margin: 12px auto 0;
+}
+
+/* Grouping Selector - h3 and p */
 h3, p {
     margin-bottom: 15px;
-    font-style: normal;
 }
 
-/* ID Selector - #mainHeader for the banner */
-#mainHeader {
-    font-size: 36px;
+h3 {
+    font-size: 22px;
     font-weight: 700;
-    margin-bottom: 10px;
+    color: var(--gray-700);
+    margin-top: 30px;
+}
+
+/* ID Selector - #mainHeader */
+#mainHeader {
+    font-size: 42px;
+    font-weight: 800;
+    margin-bottom: 12px;
+    letter-spacing: -0.5px;
 }
 
 /* ID Selector - #welcomeBanner */
 #welcomeBanner {
-    background-color: #3498db;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     color: white;
-    padding: 40px;
+    padding: 60px 40px;
     text-align: center;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    border-radius: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 20px 40px rgba(102, 126, 234, 0.3);
+    position: relative;
+    overflow: hidden;
 }
 
-/* Class Selector - .eventCard for event containers */
+#welcomeBanner::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 60%);
+    animation: shimmer 8s ease-in-out infinite;
+}
+
+@keyframes shimmer {
+    0%, 100% { transform: translate(0, 0); }
+    50% { transform: translate(20px, 20px); }
+}
+
+#welcomeBanner p {
+    font-size: 18px;
+    opacity: 0.9;
+    margin-bottom: 10px;
+}
+
+/* Class Selector - .event-card */
 .event-card {
     background: white;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    padding: 20px;
-    margin: 15px 0;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    border: 1px solid var(--gray-200);
+    border-radius: var(--radius);
+    padding: 24px;
+    box-shadow: var(--shadow-sm);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+}
+
+.event-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    opacity: 0;
+    transition: var(--transition);
 }
 
 .event-card:hover {
-    transform: scale(1.02);
+    transform: translateY(-6px);
+    box-shadow: var(--shadow-lg);
+    border-color: var(--primary);
 }
 
+.event-card:hover::before {
+    opacity: 1;
+}
+
+.event-card h3 {
+    font-size: 20px;
+    color: var(--dark);
+    margin-bottom: 10px;
+}
+
+.event-card p {
+    color: var(--gray-600);
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+
+.event-card button {
+    margin-top: 12px;
+    width: 100%;
+    padding: 12px;
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    color: white;
+    border: none;
+    border-radius: var(--radius-sm);
+    font-weight: 700;
+    font-size: 15px;
+    cursor: pointer;
+    transition: var(--transition);
+}
+
+.event-card button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+}
+
+/* Class Selector - .event-container */
 .event-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
+    margin: 20px 0;
 }
 
 /* Class Selector - .highlight */
 .highlight {
-    background-color: #fff3cd;
-    border-left: 5px solid #ffc107;
-    padding: 15px;
-    border-radius: 5px;
-    font-size: 18px;
+    background: linear-gradient(135deg, #fefcbf, #f6e05e);
+    border-left: 5px solid var(--warning);
+    padding: 20px 24px;
+    border-radius: var(--radius-sm);
+    font-size: 16px;
+    font-weight: 500;
+    color: var(--gray-800);
+    box-shadow: var(--shadow-sm);
 }

@@ -3,25 +3,38 @@
    HEX, RGBA, background image, gradients
    ======================================== */
 
-/* Body: background image with fallback color */
+/* Body: background with subtle gradient */
 body {
-    background: #f4f4f4 url('../assets/images/background.svg') repeat;
-    color: #333;
+    background: linear-gradient(135deg, var(--gray-100) 0%, #e8ecf8 50%, var(--gray-100) 100%);
+    color: var(--gray-700);
 }
 
-/* Heading: linear gradient */
+/* Heading: gradient text effect */
 h2 {
-    background: linear-gradient(90deg, #3498db, #2ecc71);
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-/* RGBA usage in box-shadows and overlays */
+/* Card shadows with RGBA */
 .event-card {
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.08);
 }
 
 #welcomeBanner {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 20px 60px rgba(102, 126, 234, 0.3);
+}
+
+form, #preferences, #location, #contact, .bulletin {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+/* Section backgrounds with alternating tints */
+#events, #contact {
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: var(--radius);
+    padding: 30px;
 }

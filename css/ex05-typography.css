@@ -1,38 +1,79 @@
 /* ========================================
    CSS3 Exercise 5: Typography
-   Google Fonts, font-family, font-size,
-   font-style, font-weight, text properties
+   Google Fonts, font-family, font-size, text properties
    ======================================== */
 
 body {
-    font-family: 'Roboto', Arial, sans-serif;
+    font-family: 'Inter', 'Roboto', -apple-system, BlinkMacSystemFont, sans-serif;
     font-size: 16px;
-    line-height: 1.6;
-    padding: 20px;
+    line-height: 1.7;
+    color: var(--gray-700);
+    -webkit-font-smoothing: antialiased;
 }
 
 h2 {
-    font-size: 28px;
-    font-weight: 700;
+    font-size: 32px;
+    font-weight: 800;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    letter-spacing: 3px;
     text-align: center;
 }
 
-#mainHeader {
-    font-size: 36px;
+h3 {
+    font-size: 22px;
     font-weight: 700;
+    color: var(--gray-700);
+}
+
+#mainHeader {
+    font-size: 42px;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    line-height: 1.2;
 }
 
 .highlight {
-    font-size: 18px;
+    font-size: 16px;
+    font-weight: 500;
 }
 
-nav ul li a:link {
-    font-weight: bold;
-    font-size: 18px;
+nav ul li a {
+    font-weight: 600;
+    font-size: 16px;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.event-card h3 {
+    font-size: 20px;
+    font-weight: 700;
 }
 
 table figcaption {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--gray-500);
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+label {
     font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+#welcomeBanner p {
+    font-size: 18px;
+    opacity: 0.95;
+    line-height: 1.6;
+    max-width: 600px;
+    margin: 0 auto 10px;
+}
+
+footer p {
+    font-size: 14px;
+    opacity: 0.8;
+    letter-spacing: 0.5px;
 }

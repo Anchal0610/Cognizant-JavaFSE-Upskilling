@@ -1,47 +1,74 @@
 /* ========================================
    CSS3 Exercise 6: Link and List Styling
    :link :visited :hover :active pseudo-classes
-   list-style-type, list-style-position, no bullets
+   list-style-type, padding/margin on items
    ======================================== */
 
-/* Navigation background */
+/* Navigation - Sticky with glassmorphism */
 nav {
-    background: #2c3e50;
-    padding: 15px 0;
-    margin-bottom: 30px;
-    border-radius: 5px;
+    background: rgba(26, 32, 44, 0.95);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 16px 0;
+    margin-bottom: 40px;
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 16px;
+    z-index: 1000;
+    border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* Remove bullets from nav menus */
+/* Remove bullets from nav */
 nav ul {
     list-style-type: none;
     list-style-position: inside;
     text-align: center;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    flex-wrap: wrap;
 }
 
 nav ul li {
     display: inline-block;
-    margin: 0 15px;
-    padding: 5px 10px;
+    margin: 0;
+    padding: 0;
 }
 
 /* Link pseudo-classes */
-nav ul li a:link {
-    color: #ecf0f1;
+nav ul li a {
+    display: block;
+    padding: 10px 20px;
+    border-radius: var(--radius-sm);
     text-decoration: none;
-    font-weight: bold;
-    font-size: 18px;
+    font-weight: 600;
+    font-size: 15px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    transition: var(--transition);
+    position: relative;
+}
+
+nav ul li a:link {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 nav ul li a:visited {
-    color: #bdc3c7;
+    color: rgba(255, 255, 255, 0.6);
 }
 
 nav ul li a:hover {
-    color: #f1c40f;
-    text-decoration: underline;
+    color: white;
+    background: rgba(255, 255, 255, 0.12);
+    transform: translateY(-2px);
 }
 
 nav ul li a:active {
-    color: #e74c3c;
+    color: var(--accent);
+    background: rgba(255, 255, 255, 0.05);
+    transform: translateY(0);
 }
+
+/* Active page indicator via href (no JS needed) */
+nav ul li a[href="#home"] { color: var(--accent); }

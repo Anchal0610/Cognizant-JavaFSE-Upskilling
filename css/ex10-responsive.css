@@ -1,73 +1,181 @@
 /* ========================================
    CSS3 Exercise 10: Responsive Web Design
-   Flexbox layout, media queries,
+   Flexbox/Grid layout, media queries,
    %, vw, vh for flexible layouts
    ======================================== */
 
-/* Flexbox responsive layout */
+/* Event cards grid - responsive */
 .event-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 24px;
 }
 
 .event-card {
-    flex: 1 1 280px;
-    max-width: 350px;
+    flex: unset;
+    max-width: unset;
 }
 
-/* Mobile screens */
+/* Tablet */
+@media screen and (max-width: 1024px) {
+    main {
+        padding: 0 16px;
+    }
+
+    #mainHeader {
+        font-size: 32px;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+        gap: 20px;
+    }
+}
+
+/* Mobile */
 @media screen and (max-width: 768px) {
     body {
-        padding: 10px;
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    nav {
+        position: relative;
+        top: 0;
+        margin-bottom: 24px;
+        padding: 12px 0;
+    }
+
+    nav ul {
+        flex-direction: column;
+        gap: 4px;
+    }
+
+    nav ul li {
+        display: block;
+        margin: 0;
+    }
+
+    nav ul li a {
+        padding: 10px 16px;
         font-size: 14px;
     }
 
-    /* Stack navigation vertically */
-    nav ul li {
-        display: block;
-        margin: 10px 0;
+    /* Mobile hamburger-style nav */
+    nav ul li a[href="#home"] {
+        font-size: 18px;
+        font-weight: 800;
+        background: rgba(255,255,255,0.05);
     }
 
-    /* Reduce image sizes */
+    #mainHeader {
+        font-size: 26px;
+    }
+
+    #welcomeBanner {
+        padding: 30px 20px;
+        border-radius: 16px;
+    }
+
+    #welcomeBanner p {
+        font-size: 15px;
+    }
+
+    h2 {
+        font-size: 24px;
+        letter-spacing: 1.5px;
+    }
+
+    h3 {
+        font-size: 18px;
+    }
+
+    .event-container {
+        grid-template-columns: 1fr;
+        gap: 16px;
+    }
+
     .event-img {
         width: 100%;
         height: auto;
-        max-width: 200px;
+        max-width: 160px;
     }
 
-    /* Reduce font sizes */
-    h2 {
-        font-size: 22px;
+    form, #preferences, #location {
+        padding: 20px;
     }
 
-    form {
-        padding: 15px;
+    #events table {
+        border-spacing: 8px;
     }
 
-    table {
-        font-size: 14px;
+    #events table td {
+        padding: 10px;
+    }
+
+    section {
+        margin-bottom: 40px;
+    }
+
+    input, select, textarea, button {
+        font-size: 15px;
+        padding: 12px 14px;
     }
 
     .bulletin {
         column-count: 1;
+        padding: 16px;
     }
 
-    #welcomeBanner {
+    .events-table {
+        font-size: 13px;
+    }
+
+    .events-table th,
+    .events-table td {
+        padding: 10px 14px;
+    }
+
+    #video {
         padding: 20px;
     }
 
+    #preferences button, #location button {
+        width: 100%;
+        margin-right: 0;
+        margin-bottom: 8px;
+    }
+
+    footer {
+        padding: 24px 16px;
+        border-radius: 12px 12px 0 0;
+    }
+}
+
+/* Small mobile */
+@media screen and (max-width: 480px) {
+    body {
+        padding: 8px;
+    }
+
     #mainHeader {
-        font-size: 24px;
+        font-size: 22px;
     }
 
-    .event-container {
-        flex-direction: column;
-        align-items: center;
+    h2 {
+        font-size: 20px;
     }
 
-    input, select, textarea, button {
-        font-size: 14px;
+    .event-card {
+        padding: 16px;
+    }
+
+    #welcomeBanner {
+        padding: 24px 16px;
+    }
+
+    nav ul li a {
+        font-size: 13px;
+        padding: 8px 12px;
     }
 }
