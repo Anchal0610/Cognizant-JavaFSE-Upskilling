@@ -1,5 +1,5 @@
-SELECT e.event_id, e.title, e.start_date, COUNT(s.session_id) AS session_count
+SELECT e.event_id, e.title, e.event_date, COUNT(s.session_id) AS session_count
 FROM Events e
 LEFT JOIN Sessions s ON e.event_id = s.event_id
 WHERE e.status = 'upcoming'
-GROUP BY e.event_id, e.title, e.start_date;
+GROUP BY e.event_id, e.title, e.event_date;
