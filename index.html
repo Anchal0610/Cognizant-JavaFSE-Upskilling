@@ -40,35 +40,37 @@
             <div id="eventList" class="event-container"></div>
 
             <h3>Past Event Gallery</h3>
-            <table>
-                <tr>
-                    <td><img src="assets/images/event1.svg" alt="Community Festival 2024" title="Community Festival 2024" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Community Festival 2024</figcaption></td>
-                    <td><img src="assets/images/event2.svg" alt="Art Workshop" title="Art Workshop" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Art Workshop</figcaption></td>
-                    <td><img src="assets/images/event3.svg" alt="Charity Run" title="Charity Run" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Charity Run</figcaption></td>
-                </tr>
-                <tr>
-                    <td><img src="assets/images/event4.svg" alt="Food Fair" title="Food Fair" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Food Fair</figcaption></td>
-                    <td><img src="assets/images/event5.svg" alt="Music Concert" title="Music Concert" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Music Concert</figcaption></td>
-                    <td><img src="assets/images/event6.svg" alt="Yoga Session" title="Yoga Session" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Yoga Session</figcaption></td>
-                </tr>
-            </table>
-
-            <!-- Category Filter -->
-            <div>
-                <label for="categoryFilter">Filter by Category:</label>
-                <select id="categoryFilter" onchange="filterEventsByCategory(this.value)">
-                    <option value="all">All</option>
-                    <option value="Music">Music</option>
-                    <option value="Workshop">Workshop</option>
-                    <option value="Festival">Festival</option>
-                    <option value="Sports">Sports</option>
-                </select>
+            <div class="table-wrapper">
+                <table>
+                    <tr>
+                        <td><img src="assets/images/event1.svg" alt="Community Festival 2024" title="Community Festival 2024" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Community Festival 2024</figcaption></td>
+                        <td><img src="assets/images/event2.svg" alt="Art Workshop" title="Art Workshop" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Art Workshop</figcaption></td>
+                        <td><img src="assets/images/event3.svg" alt="Charity Run" title="Charity Run" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Charity Run</figcaption></td>
+                    </tr>
+                    <tr>
+                        <td><img src="assets/images/event4.svg" alt="Food Fair" title="Food Fair" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Food Fair</figcaption></td>
+                        <td><img src="assets/images/event5.svg" alt="Music Concert" title="Music Concert" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Music Concert</figcaption></td>
+                        <td><img src="assets/images/event6.svg" alt="Yoga Session" title="Yoga Session" class="event-img" ondblclick="enlargeImage(this)"><figcaption>Yoga Session</figcaption></td>
+                    </tr>
+                </table>
             </div>
 
-            <!-- Quick Search -->
-            <div>
-                <label for="searchInput">Quick Search:</label>
-                <input type="text" id="searchInput" placeholder="Type event name..." onkeydown="quickSearch(event)">
+            <!-- Category Filter & Quick Search -->
+            <div class="filter-search-row">
+                <div class="filter-group">
+                    <label for="categoryFilter">Filter by Category:</label>
+                    <select id="categoryFilter" onchange="filterEventsByCategory(this.value)">
+                        <option value="all">All</option>
+                        <option value="Music">Music</option>
+                        <option value="Workshop">Workshop</option>
+                        <option value="Festival">Festival</option>
+                        <option value="Sports">Sports</option>
+                    </select>
+                </div>
+                <div class="search-group">
+                    <label for="searchInput">Quick Search:</label>
+                    <input type="text" id="searchInput" placeholder="Type event name..." onkeydown="quickSearch(event)">
+                </div>
             </div>
         </section>
 
@@ -122,7 +124,7 @@
         <!-- Video Invite -->
         <section id="video">
             <h2>Event Promo Video</h2>
-            <video id="promoVideo" width="480" controls oncanplay="videoReady()">
+            <video id="promoVideo" controls oncanplay="videoReady()">
                 <source src="assets/images/promo.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>

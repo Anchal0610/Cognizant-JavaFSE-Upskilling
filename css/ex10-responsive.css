@@ -1,13 +1,41 @@
 /* ========================================
    CSS3 Exercise 10: Responsive Web Design
-   Flexbox/Grid layout, media queries,
-   %, vw, vh for flexible layouts
+   Mobile-first approach with fluid layout
+   %, vw, vh, flexbox, grid, media queries
    ======================================== */
 
-/* Event cards grid - responsive */
+/* ---- BASE LAYOUT (applies at all sizes) ---- */
+
+/* Table wrapper: horizontal scroll on overflow */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+    border-radius: var(--radius);
+}
+
+/* Filter & search: flex row on wider screens, stacked on narrow */
+.filter-search-row {
+    display: flex;
+    gap: 16px;
+    margin: 20px 0;
+}
+
+.filter-group,
+.search-group {
+    flex: 1;
+    min-width: 0;
+}
+
+.filter-group label,
+.search-group label {
+    margin-bottom: 6px;
+}
+
+/* Event cards grid */
 .event-container {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
     gap: 24px;
 }
 
@@ -16,166 +44,529 @@
     max-width: unset;
 }
 
-/* Tablet */
-@media screen and (max-width: 1024px) {
-    main {
-        padding: 0 16px;
-    }
-
-    #mainHeader {
-        font-size: 32px;
-    }
-
-    .event-container {
-        grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
-        gap: 20px;
-    }
+/* Fluid video */
+#video video {
+    width: 100%;
+    height: auto;
 }
 
-/* Mobile */
-@media screen and (max-width: 768px) {
+/* ---- MOBILE FIRST BASE (default for < 480px) ---- */
+
+/* Fluid body padding */
+body {
+    padding: 10px;
+    font-size: 15px;
+    min-height: 100vh;
+}
+
+/* Fluid main container */
+main {
+    max-width: 100%;
+    padding: 0 10px;
+}
+
+/* Navigation: stacked, compact */
+nav {
+    position: relative;
+    top: 0;
+    margin-bottom: 20px;
+    padding: 10px 0;
+}
+
+nav ul {
+    flex-direction: column;
+    gap: 2px;
+}
+
+nav ul li {
+    display: block;
+    margin: 0;
+}
+
+nav ul li a {
+    padding: 10px 14px;
+    font-size: 14px;
+}
+
+/* Welcome banner */
+#mainHeader {
+    font-size: 24px;
+}
+
+#welcomeBanner {
+    padding: 28px 18px;
+    border-radius: 16px;
+}
+
+#welcomeBanner p {
+    font-size: 15px;
+}
+
+/* Section headings */
+h2 {
+    font-size: 22px;
+    letter-spacing: 1px;
+}
+
+h3 {
+    font-size: 18px;
+}
+
+/* Event cards: single column */
+.event-container {
+    grid-template-columns: 1fr;
+    gap: 14px;
+}
+
+.event-card {
+    padding: 18px;
+}
+
+/* Gallery table: horizontal scroll */
+.table-wrapper {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin: 20px 0;
+    border-radius: var(--radius);
+}
+
+#events table {
+    min-width: 420px;
+    border-spacing: 8px;
+}
+
+#events table td {
+    padding: 10px;
+}
+
+.event-img {
+    width: 100%;
+    height: auto;
+    max-width: 140px;
+}
+
+/* Filter & search: stacked */
+.filter-search-row {
+    flex-direction: column;
+    gap: 12px;
+}
+
+.filter-group,
+.search-group {
+    width: 100%;
+}
+
+.filter-group select,
+.search-group input {
+    width: 100%;
+}
+
+/* Forms: compact */
+form, #preferences, #location {
+    padding: 20px 16px;
+    max-width: 100%;
+}
+
+input, select, textarea, button {
+    font-size: 16px;
+    padding: 12px 14px;
+}
+
+/* Video: fluid */
+#video {
+    padding: 16px;
+}
+
+#video video {
+    width: 100%;
+    height: auto;
+}
+
+/* Bulletin: single column */
+.bulletin {
+    column-count: 1;
+    padding: 16px;
+    column-gap: 0;
+    column-rule: none;
+}
+
+/* Events table: compact */
+.events-table {
+    font-size: 13px;
+    min-width: 300px;
+}
+
+.events-table th,
+.events-table td {
+    padding: 10px 12px;
+}
+
+/* Preferences & location buttons */
+#preferences button, #location button {
+    width: 100%;
+    margin-right: 0;
+    margin-bottom: 8px;
+}
+
+/* Section spacing */
+section {
+    margin-bottom: 36px;
+}
+
+/* Footer */
+footer {
+    padding: 24px 16px;
+    border-radius: 12px 12px 0 0;
+}
+
+/* Character count */
+#charCount {
+    font-size: 18px;
+}
+
+/* ---- SMALL PHONES (360px - 479px) ---- */
+@media screen and (min-width: 360px) {
     body {
         padding: 12px;
-        font-size: 15px;
     }
 
-    nav {
-        position: relative;
-        top: 0;
-        margin-bottom: 24px;
-        padding: 12px 0;
+    main {
+        padding: 0 12px;
     }
 
-    nav ul {
-        flex-direction: column;
-        gap: 4px;
-    }
-
-    nav ul li {
-        display: block;
-        margin: 0;
-    }
-
-    nav ul li a {
-        padding: 10px 16px;
-        font-size: 14px;
-    }
-
-    /* Mobile hamburger-style nav */
-    nav ul li a[href="#home"] {
-        font-size: 18px;
-        font-weight: 800;
-        background: rgba(255,255,255,0.05);
+    .event-img {
+        max-width: 160px;
     }
 
     #mainHeader {
         font-size: 26px;
     }
 
-    #welcomeBanner {
-        padding: 30px 20px;
-        border-radius: 16px;
+    form, #preferences, #location {
+        padding: 24px 20px;
+    }
+}
+
+/* ---- PHONES & SMALL TABLETS (480px - 767px) ---- */
+@media screen and (min-width: 480px) {
+    body {
+        padding: 16px;
+        font-size: 16px;
     }
 
-    #welcomeBanner p {
-        font-size: 15px;
+    main {
+        padding: 0 16px;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    nav ul {
+        flex-direction: row;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    nav ul li a {
+        font-size: 14px;
+        padding: 10px 16px;
+    }
+
+    #mainHeader {
+        font-size: 30px;
+    }
+
+    #welcomeBanner {
+        padding: 36px 24px;
     }
 
     h2 {
-        font-size: 24px;
-        letter-spacing: 1.5px;
-    }
-
-    h3 {
-        font-size: 18px;
+        font-size: 26px;
     }
 
     .event-container {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
         gap: 16px;
     }
 
     .event-img {
-        width: 100%;
-        height: auto;
-        max-width: 160px;
+        max-width: 180px;
     }
 
-    form, #preferences, #location {
-        padding: 20px;
+    .filter-search-row {
+        flex-direction: row;
+        gap: 16px;
     }
 
     #events table {
-        border-spacing: 8px;
-    }
-
-    #events table td {
-        padding: 10px;
-    }
-
-    section {
-        margin-bottom: 40px;
-    }
-
-    input, select, textarea, button {
-        font-size: 15px;
-        padding: 12px 14px;
-    }
-
-    .bulletin {
-        column-count: 1;
-        padding: 16px;
+        min-width: 0;
+        width: 100%;
     }
 
     .events-table {
-        font-size: 13px;
+        min-width: 0;
     }
 
-    .events-table th,
-    .events-table td {
-        padding: 10px 14px;
+    form, #preferences, #location {
+        max-width: 480px;
+        padding: 28px 24px;
     }
 
-    #video {
-        padding: 20px;
+    #video video {
+        width: 100%;
+        max-width: 560px;
     }
 
     #preferences button, #location button {
-        width: 100%;
-        margin-right: 0;
-        margin-bottom: 8px;
-    }
-
-    footer {
-        padding: 24px 16px;
-        border-radius: 12px 12px 0 0;
+        width: auto;
+        margin-right: 10px;
+        margin-bottom: 0;
     }
 }
 
-/* Small mobile */
-@media screen and (max-width: 480px) {
+/* ---- TABLETS (768px - 1023px) ---- */
+@media screen and (min-width: 768px) {
     body {
-        padding: 8px;
+        padding: 20px;
+        font-size: 16px;
+    }
+
+    main {
+        max-width: 750px;
+        padding: 0 20px;
+    }
+
+    nav {
+        position: sticky;
+        top: 16px;
+        padding: 14px 0;
+    }
+
+    nav ul {
+        flex-direction: row;
+        gap: 6px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+        padding: 10px 18px;
+    }
+
+    #mainHeader {
+        font-size: 34px;
+    }
+
+    #welcomeBanner {
+        padding: 44px 32px;
+        border-radius: 18px;
+    }
+
+    h2 {
+        font-size: 28px;
+        letter-spacing: 2px;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .event-img {
+        max-width: 200px;
+    }
+
+    #events table {
+        border-spacing: 12px;
+    }
+
+    #events table td {
+        padding: 14px;
+    }
+
+    form, #preferences, #location {
+        max-width: 500px;
+        padding: 30px 28px;
+    }
+
+    .bulletin {
+        column-count: 2;
+        column-gap: 24px;
+        column-rule: 1px solid var(--gray-300);
+        padding: 20px;
+    }
+
+    #video video {
+        max-width: 600px;
+    }
+
+    .events-table {
+        font-size: 14px;
+    }
+
+    section {
+        margin-bottom: 48px;
+    }
+}
+
+/* ---- LAPTOPS & DESKTOPS (1024px - 1439px) ---- */
+@media screen and (min-width: 1024px) {
+    body {
+        padding: 24px;
+    }
+
+    main {
+        max-width: 1000px;
+        padding: 0 24px;
+    }
+
+    nav ul {
+        gap: 8px;
+    }
+
+    nav ul li a {
+        font-size: 15px;
+        padding: 12px 22px;
+    }
+
+    #mainHeader {
+        font-size: 38px;
+    }
+
+    #welcomeBanner {
+        padding: 50px 36px;
+    }
+
+    h2 {
+        font-size: 30px;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 24px;
+    }
+
+    .event-img {
+        max-width: 220px;
+    }
+
+    form, #preferences, #location {
+        max-width: 520px;
+        padding: 32px;
+    }
+
+    #video video {
+        max-width: 640px;
+    }
+}
+
+/* ---- LARGE DESKTOPS (1440px+) ---- */
+@media screen and (min-width: 1440px) {
+    body {
+        padding: 30px;
+    }
+
+    main {
+        max-width: 1200px;
+        padding: 0 30px;
+    }
+
+    nav ul li a {
+        font-size: 16px;
+        padding: 12px 26px;
+    }
+
+    #mainHeader {
+        font-size: 42px;
+    }
+
+    #welcomeBanner {
+        padding: 60px 40px;
+        border-radius: 20px;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 28px;
+    }
+
+    .event-img {
+        max-width: 240px;
+    }
+
+    #video video {
+        max-width: 720px;
+    }
+
+    section {
+        margin-bottom: 60px;
+    }
+}
+
+/* ---- ULTRA-WIDE (1920px+) ---- */
+@media screen and (min-width: 1920px) {
+    body {
+        padding: 40px;
+    }
+
+    main {
+        max-width: 1400px;
+    }
+
+    .event-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 32px;
+    }
+
+    #welcomeBanner {
+        padding: 72px 48px;
+    }
+
+    #mainHeader {
+        font-size: 48px;
+    }
+}
+
+/* ---- HEIGHT-BASED: short screens ---- */
+@media screen and (max-height: 600px) {
+    nav {
+        position: relative;
+        top: 0;
+        margin-bottom: 16px;
+        padding: 8px 0;
+    }
+
+    #welcomeBanner {
+        padding: 20px 16px;
     }
 
     #mainHeader {
         font-size: 22px;
     }
 
-    h2 {
-        font-size: 20px;
+    section {
+        margin-bottom: 24px;
+    }
+}
+
+/* ---- PRINT ---- */
+@media print {
+    nav, #video, #preferences, #location, button {
+        display: none;
+    }
+
+    body {
+        background: white;
+        color: black;
+        font-size: 12px;
+        padding: 0;
+    }
+
+    main {
+        max-width: 100%;
     }
 
     .event-card {
-        padding: 16px;
-    }
-
-    #welcomeBanner {
-        padding: 24px 16px;
-    }
-
-    nav ul li a {
-        font-size: 13px;
-        padding: 8px 12px;
+        break-inside: avoid;
+        box-shadow: none;
+        border: 1px solid #ccc;
     }
 }
